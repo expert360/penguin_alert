@@ -2,14 +2,7 @@ defmodule PenguinAlertWeb.PenguinView do
   use Phoenix.LiveView
 
   def render(assigns) do
-    ~L"""
-    <div class="">
-      <button phx-click="hear">I can't hear!</button>
-      <div>
-        <%= @deploy_step %>
-      </div>
-    </div>
-    """
+    PenguinAlertWeb.PageView.render("penguin.html", assigns)
   end
 
   def mount(_session, socket) do
