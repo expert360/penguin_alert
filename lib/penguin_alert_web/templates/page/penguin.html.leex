@@ -1,4 +1,11 @@
 <div class="penguin-alert">
+    <audio
+      src="/images/pingu-noot-noot.mp3"
+      preload="none"
+      id="noot"
+      phx-hook="AlertSound"
+      phx-last-play="<%= @last_play %>">
+    </audio>
     <h1 class="heading">Project Penguineer</h1>
     <div class="image">
       <img src="images/pingu-penguin.png">

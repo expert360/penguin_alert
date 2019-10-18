@@ -6,19 +6,19 @@ defmodule PenguinAlertWeb.PenguinView do
   end
 
   def mount(_session, socket) do
-    {:ok, assign(socket, deploy_step: "Ready!", count: 1)}
+    {:ok, assign(socket, deploy_step: "Ready!", last_play: nil)}
   end
 
   def handle_event("hear", _, socket) do
     IO.inspect(socket, label: "!!!!I can't hear!!!!!!!")
 
-    {:noreply, socket}
+    {:noreply, assign(socket, last_play: NaiveDateTime.utc_now())}
   end
 
   def handle_event("question", _, socket) do
     IO.inspect(socket, label: "!!!!!!question!!!!!")
 
-    {:noreply, socket}
+    {:noreply, assign(socket, last_play: NaiveDateTime.utc_now())}
   end
 
   def handle_event("good", _, socket) do

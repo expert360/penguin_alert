@@ -19,5 +19,18 @@ import "phoenix_html";
 import { Socket } from "phoenix";
 import LiveSocket from "phoenix_live_view";
 
-let liveSocket = new LiveSocket("/live", Socket);
+let Hooks = {};
+Hooks.AlertSound = {
+  updated() {
+    const lastPlay = document
+      .getElementById("noot")
+      .getAttribute("phx-last-play");
+
+    if (!!lastPlay) {
+      document.getElementById("noot").play();
+    }
+  }
+};
+
+let liveSocket = new LiveSocket("/live", Socket, { hooks: Hooks });
 liveSocket.connect();
