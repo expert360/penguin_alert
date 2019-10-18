@@ -6,7 +6,7 @@ defmodule PenguinAlertWeb.PenguinView do
   end
 
   def mount(_session, socket) do
-    {:ok, assign(socket, deploy_step: "Ready!")}
+    {:ok, assign(socket, deploy_step: "Ready!", count: 1)}
   end
 
   def handle_event("hear", _, socket) do
@@ -27,4 +27,3 @@ defmodule PenguinAlertWeb.PenguinView do
     {:noreply, socket}
   end
 end
-
