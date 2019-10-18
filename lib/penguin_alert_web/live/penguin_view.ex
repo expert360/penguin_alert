@@ -10,8 +10,21 @@ defmodule PenguinAlertWeb.PenguinView do
   end
 
   def handle_event("hear", _, socket) do
-    IO.inspect(socket, label: "!!!!!!!!!!!")
+    IO.inspect(socket, label: "!!!!I can't hear!!!!!!!")
+
+    {:noreply, socket}
+  end
+
+  def handle_event("question", _, socket) do
+    IO.inspect(socket, label: "!!!!!!question!!!!!")
+
+    {:noreply, socket}
+  end
+
+  def handle_event("good", _, socket) do
+    IO.inspect(socket, label: "!!!!!!sounds good!!!!!")
 
     {:noreply, socket}
   end
 end
+
