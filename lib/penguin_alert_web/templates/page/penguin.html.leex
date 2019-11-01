@@ -1,24 +1,29 @@
-<div class="penguin-alert">
-    <audio
-      src="/images/pingu-noot-noot.mp3"
-      preload="none"
-      id="noot"
-      phx-hook="AlertSound"
-      phx-last-play="<%= @last_play %>">
-    </audio>
-    <h1 class="heading">Project Penguineer</h1>
-    <div class="image">
-      <img src="images/pingu-penguin.png">
-    </div>
+<div class="container">
+  <audio
+    src="/images/pingu-noot-noot.mp3"
+    preload="none"
+    id="noot"
+    phx-hook="AlertSound"
+    phx-last-play="<%= @last_play %>">
+  </audio>
   <div>
-    <div class="button">
-      <button phx-click="hear">I can't hear!</button>
+    <div>
+      <div class="image" phx-hook="PenguinAnimation" phx-last-play="<%= @last_play %>">
+          <img src="images/pingu-penguin.png">
+      </div>
     </div>
-    <div class="button">
-      <button phx-click="question">I have a question</button>
-    </div>
-    <div class="button">
-      <button phx-click="good">Sounds good</button>
+  </div>
+  <div>
+    <div>
+        <div class="button">
+            <button phx-click="hear">I can't hear!</button>
+          </div>
+          <div class="button">
+            <button phx-click="question">I have a question</button>
+          </div>
+          <div class="button">
+            <button phx-click="good">Sounds good</button>
+          </div>
     </div>
   </div>
 </div>

@@ -18,19 +18,24 @@
  
  .container{
    margin: 0 auto;
-   max-width: 80.0rem;
-   padding: 0 2.0rem;
-   position: relative;
-   width: 100%
  }
  
  .image {
    width: 100px;
-   display: inline-block;
    margin: 0 20px 0;
  }
- 
- .heading {
-   text-align: center;
+
+ .animated {
+   animation: bounce 500ms linear 0s 7 alternate;
+ }
+
+ @keyframes bounce {
+   from {
+     margin-left: 0%;
+   }
+
+   to {
+     margin-right: 25%;
+   }
  }
  
