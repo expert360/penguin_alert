@@ -26,7 +26,7 @@
  }
 
  .animated {
-   animation: bounce 500ms linear 0s 7 alternate;
+   animation: bounce 500ms ease-in-out 0s 7 alternate;
  }
 
  @keyframes bounce {
