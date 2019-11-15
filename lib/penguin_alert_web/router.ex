@@ -18,7 +18,7 @@ defmodule PenguinAlertWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/penguin_view", PenguinController, :show
+    get "/penguin_view/:id", PenguinController, :show
   end
 
   # Other scopes may use custom stacks.
